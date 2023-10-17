@@ -24,3 +24,24 @@ for i in range(2, n + 1):
         dp[i] = min(dp[i], dp[i // 3] + 1)
 
 print(dp[n])
+
+'''
+실패 코드
+
+n = int(input())
+t = 0
+res = 1e9
+
+def dfs(n, t):
+    if n == 1:
+        return min(res, t)
+    
+    if n % 3 == 0:
+        return dfs(n // 3, t + 1)
+    elif n % 2 == 0:
+        return dfs(n // 2, t + 1)
+    else:
+        return dfs(n - 1, t + 1)
+
+print(dfs(n))
+'''
